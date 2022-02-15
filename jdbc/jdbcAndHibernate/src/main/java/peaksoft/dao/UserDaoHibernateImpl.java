@@ -32,7 +32,7 @@ public class UserDaoHibernateImpl implements UserDao {
             query.executeUpdate();
             session.getTransaction().commit();
             session.close();
-            System.out.println("Successfully delete all Users");
+            System.out.println("Успешное удаление всех пользователей");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -46,7 +46,7 @@ public class UserDaoHibernateImpl implements UserDao {
             session.save(new User(name, lastName, age));
             session.getTransaction().commit();
             session.close();
-            System.out.println("Успешное создание================================= ");
+            System.out.println("Успешное сохранение пользователей ");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -60,7 +60,7 @@ public class UserDaoHibernateImpl implements UserDao {
                 Transaction transaction = session.beginTransaction();
                 session.createSQLQuery("DELETE FROM  users WHERE id = ?").executeUpdate();
                 transaction.commit();
-                System.out.println(id + " " + "user was remove by id");
+                System.out.println(id + " " + "удален пользователь с id");
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -89,7 +89,7 @@ public class UserDaoHibernateImpl implements UserDao {
             query.executeUpdate();
             session.getTransaction().commit();
             session.close();
-            System.out.println("Successfully delete all Users");
+            System.out.println("Очищено");
 
            } catch (Exception e) {
             e.printStackTrace();
